@@ -1,0 +1,147 @@
+<h1>Formateo de Texto Avanzado</h1>
+
+<h2>Listas de Descripciones</h2>
+
+<dl>  <!--Description List-->
+  <dt>soliloquio</dt> <!--Description Term-->
+  <dd>En las obras dramáticas, corresponde a cuando un personaje se habla a sí <!--Description Definition-->
+    mismo para representar sus pensamientos o sentimientos internos y, en el
+    proceso, transmitirlos a la audiencia (pero no a otros personajes).
+  </dd>
+  <dt>monólogo</dt>
+  <dd>En las obras dramáticas, corresponde a cuando un personaje habla de sus
+    pensamientos en voz alta para compartirlos con el público y cualquier otro
+    personaje presente.
+  </dd>
+  <dt>aparte</dt>
+  <dd>En las obras dramáticas, corresponde a cuando un personaje comparte un
+    comentario solo con la audiencia para dar efecto cómico o dramático. Suele
+    ser un sentimiento, un pensamiento o información adicional.
+  </dd>
+  <dd>
+    Si la obra es impresa, es una sección de contenido que se relaciona con el
+    tema, pero no encaja directamente en el flujo principal de contenido, de
+    modo que se presenta por separado (a menudo en una caja de texto en el
+    margen).
+  </dd>
+
+</dl>
+
+<h2>Ejemplo</h2>
+
+<dl>
+  <dt>Tocino</dt>
+  <dd>El pegamento que une al mundo.</dd>
+  <dt>Huevos</dt>
+  <dd>El pegamento que une el pastel.</dd>
+  <dt>Café</dt>
+  <dd>La bebida que hace que el mundo funcione por la mañana.</dd>
+  <dd>Un color marrón claro.</dd>
+</dl>
+
+<h2>Citas en bloque independiente</h2>
+
+<p>A continuación se muestra una cita en bloque independiente:</p>
+
+<blockquote cite="https://developer.mozilla.org/es/docs/Web/HTML/Element/blockquote">
+  <p>
+    El <strong>elemento HTML <code>&lt;blockquote&gt;</code></strong> (o
+    <em>elemento HTML de cita en bloque independiente</em>) indica que el texto
+    al que delimita es una cita ampliada.
+  </p>
+</blockquote>
+
+<p>
+  Todo esto de acuerdo con la
+  <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/blockquote">
+    <cite>página de citas en bloque independiente de MDN</cite></a>.
+</p>
+
+<h2>Citas en Línea</h2>
+
+<p>El elemento de cita en línea <code>&lt;q&gt;</code> se <q
+    cite="https://developer.mozilla.org/es/docs/Web/HTML/Element/q">
+    utiliza para citas breves que no requieren un salto de párrafo</q>.</p>
+
+<a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/q">
+  <cite>Página q de MDN</cite></a>.
+</p>
+
+<h3>Actividad Citas</h3>
+<p>Hola y bienvenido a mi página de motivación. Como dice el <a
+    href="http://www.brainyquote.com/quotes/authors/c/confucius.html"><cite>sitio de citas de Confucio</cite></a>:</p>
+<p>
+<blockquote cite="http://www.brainyquote.com/quotes/authors/c/confucius.html">No importa qué tan lento vayas siempre que
+  no te detengas.</blockquote>
+</p>
+<p>También me encanta el concepto de pensamiento positivo y <q cite="http://www.affirmationsforpositivethinking.com">La
+    necesidad de eliminar el diálogo interno negativo</q> (como se menciona en <a
+    href="http://www.affirmationsforpositivethinking.com"><cite>Afirmaciones para el pensamiento positivo</cite></a>).
+</p>
+
+<h2>Abreviaturas</h2>
+
+<p>Usamos <abbr title="Lenguaje de Marcado de HiperTexto">HTML</abbr> para estructurar nuestros documentos web.</p>
+
+<p>La <abbr title="Administración Nacional de Aeronáutica y el Espacio">NASA</abbr> sin duda hace un interesante
+  trabajo.</p>
+
+<h2>Marcar la información de Contacto</h2> <!--Se utiliza la etiqueta "<address>"-->
+
+<address>
+  <p>Mauro Giraudo, Venado Tuerto, Santa Fe, Argentina</p>
+  <ul>
+    <li>Tel: 03462-522974</li>
+    <li>E-mail: mfgiraudo456@gmail.com</li>
+  </ul>
+</address>
+
+<!--Podríamos agregar toda esta información en una página aparte y simplemente ingresar un hipervínculo a la misma-->
+
+<address>
+  <p>Página escrita por <a href="author.html" title="Estudiante de Ingeniería en Sistemas (3er Año)">Mauro Giraudo</a>.</p>
+</address>
+
+<h2>SuperÍndice y Subíndice</h2> <!--<sup> y <sub>-->
+
+<p>La fórmula química de la cafeína es: C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+
+<p>Si x<sup>2</sup> es 9, entonces x puede ser 3 o -3.</p>
+
+<h2>Representación del Código Informático</h2>
+
+<pre><code>var para = document.querySelector('p');
+  
+  para.onclick = function() {
+    alert('¡Guau!, ¡deja de apretar!');
+  }</code></pre>
+
+<p>
+  No debes utilizar elementos de presentación como <code>&lt;font&gt;</code> y
+  <code>&lt;center&gt;</code>.
+</p>
+
+<p>
+  En el ejemplo de JavaScript anterior, <var>para</var> representa un elemento
+  de párrafo.
+</p>
+
+<p>
+  Selecciona todo el texto con <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.
+</p>
+
+<pre>$ <kbd>ping mozilla.org</kbd>
+  <samp>PING mozilla.org (63.245.215.20): 56 bytes de datos
+  64 bytes de 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+<h2>Marcar horas y fechas</h2>
+<ul>
+  <li><time datetime="2024-04-21">21 de Abril de 2024</time></li>
+  <li><time datetime="2024-04">Abril de 2024</time></li>
+  <li><time datetime="04-21">21 de Abril</time></li>
+  <li><time datetime="23:45">23:45</time></li>
+  <li><time datetime="23:45:36.856">23:45:36.856</time></li>
+  <li><time datetime="2024-04-21T23:45">11:45pm, 21 de Abril de 2024</time></li>
+  <li><time datetime="2024-04-21T23:45-01:00">11:45pm, 21 de Abril de 2024 - son las 10:45pm en Chile</time></li>
+  <li><time datetime="2024-W04">La cuarta semana de 2024</time></li>
+</ul>
