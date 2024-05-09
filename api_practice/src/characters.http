@@ -4,5 +4,50 @@ GET http://localhost:3000/api/characters
 
 ### Obtenemos un character
 
-GET http://localhost:3000/api/characters/8c7c3200-7536-4a62-a407-a88472256d44
+GET http://localhost:3000/api/characters/b780c4c6-68c2-4177-8371-af0102a99d38
 
+### Crear un nuevo character
+
+POST http://localhost:3000/api/characters
+Content-Type: application/json
+
+{
+  "name": "Fu Xuan",
+  "characterClass": "Preservation",
+  "hp": 8000,
+  "level": 70,
+  "mana": 110,
+  "items": ["Divination Widget", "Cosmic Insight"],
+  "attack": 1300
+}
+
+### Modificar un character (PUT - recurso completo e idempotente)
+
+PUT http://localhost:3000/api/characters/8f4473bf-6871-42c1-bbd6-f5cfaa859de1
+Content-Type: application/json
+
+{
+  "name": "Acheron",
+  "characterClass": "Self-Annihilator",
+  "level": 80,
+  "hp": 3400,
+  "mana": 9,
+  "attack": 3850,
+  "items": ["Electric Sword", "Crimson Blossom"]
+}
+
+### Modificar un character (PATCH - recurso parcial)
+
+PATCH http://localhost:3000/api/characters/8f4473bf-6871-42c1-bbd6-f5cfaa859de1
+Content-Type: application/json
+
+{
+  "name": "Acheron",
+  "characterClass": "Self-Annihilator",
+  "level": 75,
+  "items": ["Sharp Blade", "Remarkable Determination"]
+}
+
+### Borrar un character
+
+DELETE http://localhost:3000/api/characters/b780c4c6-68c2-4177-8371-af0102a99d38
