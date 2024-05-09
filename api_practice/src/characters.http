@@ -1,0 +1,8 @@
+### Obtenemos todos los characters
+
+GET http://localhost:3000/api/characters
+
+### Obtenemos un character
+
+GET http://localhost:3000/api/characters/8c7c3200-7536-4a62-a407-a88472256d44
+

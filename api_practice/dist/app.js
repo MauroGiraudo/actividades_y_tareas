@@ -1,5 +1,6 @@
 import express from 'express';
 import { Character } from './character.js';
+const port = 3000;
 const app = express();
 //app.use('/', (req, res) => {
 //  res.json({"message": "<h1>Hello!!</h1>"})
@@ -7,11 +8,21 @@ const app = express();
 const characters = [
     new Character('Jingliu', 'Destruction', 80, 2800, 130, 3030, ['Ice Sword', 'Blindfold'])
 ];
+//Función "Get All"
 app.get('/api/characters', (req, res) => {
     res.json(characters);
 });
-app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000/');
+app.get('/api/characters/:id', (req, res) => {
+    const character = characters.find((character) => character.id === req.params.id);
+    if (!character) {
+        res.status(404).send({ message: 'characterNotFound' });
+    }
+    else {
+        res.json(character);
+    }
+});
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}/`);
 });
 //character -> /api/characters
 //get /api/characters/ -> obtener lista de characters
