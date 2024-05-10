@@ -68,7 +68,7 @@ app.patch('/api/characters/:id', sanitizeCharacterInput, (req, res) => {
     characters[charIndex] = { ...characters[charIndex], ...req.body.sanitizedCharacter };
     return res.status(200).send({ message: 'Character modified succesfully', data: characters[charIndex] });
 });
-//
+//detele /api/character/:id -> borrar character con id = :id
 app.delete('/api/characters/:id', (req, res) => {
     const charIndex = characters.findIndex((character) => character.id === req.params.id);
     if (charIndex === -1) {
@@ -85,7 +85,4 @@ app.use((req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
 });
-//character -> /api/characters
-//detele /api/character/:id -> borrar character con id = :id
-//put & patch /api/characters/:id -> modificar character con id = :id
 //# sourceMappingURL=app.js.map
