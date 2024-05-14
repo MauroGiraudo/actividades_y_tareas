@@ -3,15 +3,11 @@ import fs from 'node:fs';
 //import { readFile } from 'node:fs';
 
 console.log('Start reading a file...');
-fs.readFile(
-  'read-write-file-301/data.txt',
-  { encoding: 'utf8' },
-  errorManagement
-);
+fs.readFile('data.txt', { encoding: 'utf8' }, errorManagement);
 
 function errorManagement(err, data) {
   if (err) {
-    console.log(`Error: ${err}`);
+    console.log(`Error: ${err.code}`);
   } else {
     console.log(data);
   }

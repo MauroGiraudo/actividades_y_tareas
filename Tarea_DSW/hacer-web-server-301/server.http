@@ -3,3 +3,14 @@ GET http://localhost:3000/data.txt
 ###
 
 GET http://localhost:3000/data.html
+
+###
+
+GET http://localhost:3000/request.log
+
+###
+
+POST http://localhost:3000/data.txt
+Content-Type: text/plain
+
+{'\nI'm a String'}
