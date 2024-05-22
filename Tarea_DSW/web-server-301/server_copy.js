@@ -71,6 +71,7 @@ server.listen(port, () => {
 // Request.method
 //Contains the request's method (GET, POST, etc.)
 
+/*
 async function existeRequest() {
   const resultado = await readFile(
     'request.log',
@@ -85,3 +86,4 @@ async function existeRequest() {
   );
   return resultado;
 }
+*/
