@@ -1,0 +1,18 @@
+div.inicio {
+  background-color: blanchedalmond;
+  width: 475px;
+  border: 3px;
+  color: black;
+  border-radius: 10px;
+}
+
+h1 + p {
+  margin-top: 18px;
+  color:black ;
+  padding-bottom: 3px;
+  padding-left: 10px;
+}
+
+div h1 {
+  padding-left: 3px;
+}

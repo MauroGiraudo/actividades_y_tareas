@@ -1,0 +1,54 @@
+/* Selector {
+  propiedad: valor
+}
+*/
+
+h1, p {
+  color: green;
+}
+
+li {
+  list-style-type: upper-roman;
+}
+
+li.especial, span.especial { /* Modifica a las etiquetas <li> y <span> que tengan la clase "especial" */
+  color: orange;
+  font-weight: bold;
+}
+
+/* .especial { Modifica aquellas etiquetas que tengan la clase "especial" 
+  color: orange;
+  font-weight: bold;
+} */
+
+li em {  /* Combinador Descendente*/
+  color: rebeccapurple;
+}
+
+h1 + p { /* Combinador Hermano Adyacente */
+  font-size: 200%;
+}
+
+p span {
+  color: red;
+}
+
+a:link { /* Damos formato según el estado de la etiqueta */
+  color:pink;
+  font-weight: bold;
+}
+
+a:visited {
+  color:green;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body h1 + p .especial {
+  color: yellow;
+  background-color: black;
+  padding: 5px;
+}
+

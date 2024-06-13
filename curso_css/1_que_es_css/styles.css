@@ -1,0 +1,30 @@
+h1 {
+  color: red;
+  font-size: 5em;
+}
+
+p {
+  color: black;
+}
+
+a {
+  color:rebeccapurple;
+}
+
+div {
+  width: 300px;
+  height: 200px;
+  background-color: #f0f0f0;
+  background-image: url('Acheron.jpg');
+  background-position: top;
+  object-fit: contain;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+}
