@@ -1,4 +1,5 @@
-import crypto from 'node:crypto'
+//import crypto from 'node:crypto'
+import { customAlph } from '../shared/customAlphabet.js'
 
 export class Character {
   constructor(
@@ -9,6 +10,7 @@ export class Character {
     public mana:number, 
     public attack:number, 
     public items:string[],
-    public id = crypto.randomUUID(),
+    public id = customAlph()
+    //public id = crypto.randomUUID(),
   ) {}
 }
