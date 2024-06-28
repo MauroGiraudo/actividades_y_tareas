@@ -38,6 +38,26 @@ db.characters.insertOne({
   items: ['Lightsaber'],
 });
 
+db.characters.insertOne({
+  name: 'Jingliu',
+  characterClass: 'Destruction',
+  level: 80,
+  hp: 2800,
+  mana: 130,
+  attack: 3030,
+  items: ['Ice Sword', 'Blindfold'],
+});
+
+db.characters.insertOne({
+  name: 'Acheron',
+  characterClass: 'Nihility',
+  level: 80,
+  hp: 3157,
+  mana: 9,
+  attack: 3814,
+  items: ['Electric Sword', 'Crimson Blossom'],
+});
+
 // query
 db.characters.find();
 db.characters.find({ characterClass: 'Jedi' });

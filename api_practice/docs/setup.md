@@ -17,4 +17,18 @@
 
 # Commands
 
-docker run --name mongodb-dsw -v /home/adrian/docker-volumes/percona-mongodb-dsw:/data/db -p 27017:27017 -d percona/percona-server-mongodb:latest
+MongoDB
+docker run --name mongodb-dsw -v "D:\DockerImages/docker-volumes/percona-mongodb-dsw:/data/db" -p 27017:27017 -d percona/percona-server-mongodb:latest
+
+MySQL
+docker run --name ps8-dsw-h4g
+-v "D:/DockerImages/docker-volumes/ps8-dsw-h4g:/var/lib/mysql"
+-e MYSQL_ROOT_HOST='%'
+-e MYSQL_ALLOW_EMPTY_PASSWORD="yes"
+-e MYSQL_PASSWORD="dsw"
+-e MYSQL_USER="dsw"
+-e MYSQL_DATABASE='heroclash4geeks'
+-p 3306:3306
+-d percona/percona-server
+
+docker run --name ps8-dsw-h4g -v "D:\DockerImages/docker-volumes/ps8-dsw-h4g:/var/lib/mysql" -e MYSQL_ROOT_HOST='%' -e MYSQL_ALLOW_EMPTY_PASSWORD="yes" -e MYSQL_ROOT_PASSWORD="root" -e MYSQL_USER="dsw" -e MYSQL_PASSWORD="dsw" -d mysql:latest

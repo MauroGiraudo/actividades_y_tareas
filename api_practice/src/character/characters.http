@@ -4,7 +4,7 @@ GET http://localhost:3000/api/characters
 
 ### Obtenemos un character
 
-GET http://localhost:3000/api/characters/b780c4c668c2
+GET http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
 
 ### Crear un nuevo character
 
@@ -23,7 +23,7 @@ Content-Type: application/json
 
 ### Modificar un character (PUT - recurso completo e idempotente)
 
-PUT http://localhost:3000/api/characters/8f4473bf6871
+PUT http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
 Content-Type: application/json
 
 {
@@ -38,7 +38,7 @@ Content-Type: application/json
 
 ### Modificar un character (PATCH - recurso parcial)
 
-PATCH http://localhost:3000/api/characters/8f4473bf6871
+PATCH http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
 Content-Type: application/json
 
 {
@@ -50,4 +50,4 @@ Content-Type: application/json
 
 ### Borrar un character
 
-DELETE http://localhost:3000/api/characters/b780c4c668c2
+DELETE http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a

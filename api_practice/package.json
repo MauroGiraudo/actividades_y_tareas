@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "express": "4.19.2",
+    "mongodb": "6.8.0",
+    "mysql2": "3.10.1",
     "nanoid": "5.0.7"
   }
 }

@@ -1,7 +1,5 @@
-//import crypto from 'node:crypto'
-import { customAlph } from '../shared/customAlphabet.js';
 export class Character {
-    constructor(name, characterClass, level, hp, mana, attack, items, id = customAlph()
+    constructor(name, characterClass, level, hp, mana, attack, items, id, _id
     //public id = crypto.randomUUID(),
     ) {
         this.name = name;
@@ -12,6 +10,7 @@ export class Character {
         this.attack = attack;
         this.items = items;
         this.id = id;
+        this._id = _id;
     }
 }
 //# sourceMappingURL=character.entity.js.map

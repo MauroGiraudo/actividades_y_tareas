@@ -18,34 +18,33 @@ function sanitizedCharacter(req, res, next) {
     });
     next();
 }
-function findAll(req, res) {
-    res.json({ data: charRepository.findAll() });
+async function findAll(req, res) {
+    res.json({ data: await charRepository.findAll() });
 }
-function findOne(req, res) {
+async function findOne(req, res) {
     const idChar = req.params.id;
-    const char = charRepository.findOne({ codigo: idChar });
+    const char = await charRepository.findOne({ codigo: idChar });
     if (!char) {
         res.status(404).send({ message: 'El id ingresado no corresponde a un personaje' });
     }
     res.json({ data: char });
 }
-function add(req, res) {
+async function add(req, res) {
     const input = req.body.sanitizedChar;
     const charInput = new Character(input.name, input.characterClass, input.level, input.hp, input.mana, input.attack, input.items, input.id);
-    const char = charRepository.add(charInput);
+    const char = await charRepository.add(charInput);
     res.status(201).send({ message: 'El personaje ha sido creado exitosamente', data: char });
 }
-function update(req, res) {
-    req.body.sanitizedChar.id = req.params.id;
-    const updatedChar = charRepository.update(req.body.sanitizedChar);
+async function update(req, res) {
+    const updatedChar = await charRepository.update(req.params.id, req.body.sanitizedChar);
     if (!updatedChar) {
         res.status(404).send({ message: 'El id no corresponde a un personaje registrado' });
     }
     res.status(200).send({ message: 'El personaje ha sido actualizado con éxito' });
 }
-function remove(req, res) {
+async function remove(req, res) {
     const idChar = req.params.id;
-    const deletedChar = charRepository.delete({ codigo: idChar });
+    const deletedChar = await charRepository.delete({ codigo: idChar });
     if (!deletedChar) {
         res.status(404).send({ message: 'El id no corresponde a un personaje registrado' });
     }

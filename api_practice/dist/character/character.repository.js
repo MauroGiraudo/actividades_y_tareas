@@ -1,31 +1,66 @@
-import { Character } from "./character.entity.js";
-const characters = [
-    new Character('Jingliu', 'Destruction', 80, 2800, 130, 3030, ['Ice Sword', 'Blindfold'], "b780c4c668c2"),
-    new Character('Acheron', 'Nihility', 80, 3157, 9, 3814, ['Electric Sword', 'Crimson Blossom'], "8f4473bf6871")
-];
+import { db } from "../shared/db/conn.js";
+import { ObjectId } from "mongodb";
+import { pool } from "../shared/db/conn.mysql.js";
+const characters = db.collection('characters');
 export class CharacterRepository {
-    findAll() {
+    async findAll() {
+        //MongoDB
+        /*return await characters.find().toArray()*/
+        //MySQL 
+        const [characters] = await pool.query('select * from characters');
+        for (const character of characters) {
+            const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id]);
+            character.items = items.map((item) => item.itemName);
+        }
         return characters;
     }
-    findOne(item) {
-        return characters.find((char) => char.id === item.codigo);
-    }
-    add(item) {
-        characters.push(item);
-        return item;
-    }
-    update(item) {
-        const charIndex = characters.findIndex((char) => char.id === item.id);
-        if (charIndex !== -1) {
-            characters[charIndex] = { ...characters[charIndex], ...item };
+    async findOne(item) {
+        //MongoDB
+        /*const _id = new ObjectId(item.codigo)
+        return (await characters.findOne({_id})) || undefined*/
+        //MySQL
+        const id = Number.parseInt(item.codigo);
+        const [characters] = await pool.query('select * from characters = ?', [id]);
+        if (characters.length === 0) {
+            return undefined;
         }
-        return characters[charIndex];
+        const character = characters[0];
+        const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id]);
+        character.items = items.map((item) => item.itemName);
+        return character;
     }
-    delete(item) {
-        const charIndex = characters.findIndex((char) => char.id === item.codigo);
-        const deletedChar = characters[charIndex];
-        characters.splice(charIndex, 1);
-        return deletedChar;
+    async add(characterInput) {
+        //MongoDB
+        /*characterInput._id = (await characters.insertOne(characterInput)).insertedId
+        return characterInput*/
+        //MySQL
+        const { id, items, ...characterRow } = characterInput;
+        const [resultado] = await pool.query('insert into characters set ?', [characterRow]);
+        characterInput.id = resultado.insertId;
+        for (const item of items) {
+            await pool.query('insert into characterItems set ?', { CharacterId: characterInput.id, ItemName: item });
+        }
+        return characterInput;
+    }
+    async update(codigo, characterInput) {
+        //MongoDB
+        /*const _id = new ObjectId(codigo)
+        return (await characters.findOneAndUpdate({_id}, {$set: characterInput}, {returnDocument:'after'})) || undefined*/
+        //MySQL
+        const characterId = Number.parseInt(codigo);
+        const { items, ...characterRow } = characterInput;
+        await pool.query('update characters set ? where id = ?', [characterRow.id, characterId]);
+        await pool.query('delete from characterItems where characterId = ?', [characterId]);
+        if (items?.length > 0) {
+            for (const itemName of items) {
+                await pool.query('insert into characterItems set ?', { characterId, itemName });
+            }
+        }
+        return characterInput;
+    }
+    async delete(item) {
+        const _id = new ObjectId(item.codigo);
+        return (await characters.findOneAndDelete({ _id })) || undefined;
     }
 }
 //# sourceMappingURL=character.repository.js.map
