@@ -4,7 +4,7 @@ GET http://localhost:3000/api/characters
 
 ### Obtenemos un character
 
-GET http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
+GET http://localhost:3000/api/characters/667e1e3351752f0f7acc898b
 
 ### Crear un nuevo character
 
@@ -38,7 +38,7 @@ Content-Type: application/json
 
 ### Modificar un character (PATCH - recurso parcial)
 
-PATCH http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
+PATCH http://localhost:3000/api/characters/667e1e3351752f0f7acc898b
 Content-Type: application/json
 
 {
@@ -50,4 +50,4 @@ Content-Type: application/json
 
 ### Borrar un character
 
-DELETE http://localhost:3000/api/characters/668723d6f3ea0151897d8e13
+DELETE http://localhost:3000/api/characters/668724454148d56d331495eb

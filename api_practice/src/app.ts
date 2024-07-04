@@ -7,7 +7,7 @@ app.use(express.json())
 
 app.use('/api/characters', charRouter)
 
-app.use((req, res) => {
+app.use((req: Request, res: Response) => {
   return res.status(404).send({message: 'Resource not found'})
 })
 
