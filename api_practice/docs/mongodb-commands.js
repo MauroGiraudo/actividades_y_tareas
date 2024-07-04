@@ -17,6 +17,46 @@
 
 //insert data
 
+//Acheron Put Data
+
+/*
+{
+  "name": "Acheron",
+  "characterClass": "Self-Annihilator",
+  "level": 80,
+  "hp": 3400,
+  "mana": 9,
+  "attack": 3850,
+  "items": ["Electric Sword", "Crimson Blossom"]
+}
+*/
+
+//Jingliu Add Data
+/*
+{
+  "name": "Jingliu",
+  "characterClass": "Destruction",
+  "level": 80,
+  "hp": 2800,
+  "mana": 130,
+  "attack": 3030,
+  "items": ["Ice Sword", "Blindfold"]
+}
+*/
+
+//Fu Xuan Add Data
+/*
+{
+  "name": "Fu Xuan",
+  "characterClass": "Preservation",
+  "hp": 8000,
+  "level": 70,
+  "mana": 110,
+  "items": ["Divination Widget", "Cosmic Insight"],
+  "attack": 1300
+}
+*/
+
 //Creamos un documento:
 db.characters.insertOne({
   name: 'Darth Vader',

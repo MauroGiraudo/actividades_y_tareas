@@ -12,18 +12,18 @@ POST http://localhost:3000/api/characters
 Content-Type: application/json
 
 {
-  "name": "Fu Xuan",
-  "characterClass": "Preservation",
-  "hp": 8000,
-  "level": 70,
-  "mana": 110,
-  "items": ["Divination Widget", "Cosmic Insight"],
-  "attack": 1300
+  "name": "Jingliu",
+  "characterClass": "Destruction",
+  "level": 80,
+  "hp": 2800,
+  "mana": 130,
+  "attack": 3030,
+  "items": ["Ice Sword", "Blindfold"]
 }
 
 ### Modificar un character (PUT - recurso completo e idempotente)
 
-PUT http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
+PUT http://localhost:3000/api/characters/667e1e3351752f0f7acc898b
 Content-Type: application/json
 
 {
@@ -50,4 +50,4 @@ Content-Type: application/json
 
 ### Borrar un character
 
-DELETE http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
+DELETE http://localhost:3000/api/characters/668723d6f3ea0151897d8e13
