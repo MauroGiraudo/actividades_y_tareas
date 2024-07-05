@@ -8,8 +8,8 @@ POST http://localhost:3000/api/characters/classes
 Content-Type: application/json
 
 {
-  "name": "Jingliu",
-  "descripcion": "Once master of the Xianzhou, now wanders fighting agains the mara corrupting her body" 
+  "name": "Destruction",
+  "descripcion": "Deals high amounts of AOE damage to enemies" 
 }
 
 ### ID
@@ -43,4 +43,4 @@ Content-Type: application/json
 ### DELETE
 
 @idToDelete = {{createCharacterClassToDelete.response.body.data.id}}
-DELETE http://localhost:3000/api/characters/classes/{{idToDelete}}
+DELETE http://localhost:3000/api/characters/classes/6687c3119f29fa002acda8c5
