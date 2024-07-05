@@ -50,4 +50,4 @@ Content-Type: application/json
 
 ### Borrar un character
 
-DELETE http://localhost:3000/api/characters/668724454148d56d331495eb
+DELETE http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
