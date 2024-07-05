@@ -9,7 +9,8 @@ export class CharacterRepository {
         /*const [characters] = await pool.query('select * from characters')
          for(const character of characters as Character[]){
            const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id])
-           character.items = (items as {itemName:string}[]).map((item) => item.itemName)
+           //CONSULTAR CÓMO RESOLVER EL PROBLEMA DE TIPOS (string[] - Item[])
+           //character.items = (items as {itemName:string}[]).map((item) => item.itemName)
          }
          return characters as Character[]*/
     }
@@ -25,7 +26,8 @@ export class CharacterRepository {
         }
         const character = characters[0] as Character
           const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id])
-          character.items = (items as {itemName:string}[]).map((item) => item.itemName)
+          //CONSULTAR CÓMO RESOLVER EL PROBLEMA DE TIPOS (string[] - Item[])
+          //character.items = (items as {itemName:string}[]).map((item) => item.itemName)
           return character*/
     }
     async add(characterInput) {

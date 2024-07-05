@@ -1,0 +1,42 @@
+### GET ALL
+
+GET http://localhost:3000/api/items
+
+### POST
+
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{
+  "name": "Blindfold",
+  "descripcion": "Used by Jingliu for increased concentration to fight against mara"
+}
+
+### GET ONE
+
+@idToGetOne = {{createItemToGetOne.response.body.data.id}}
+GET http://localhost:3000/api/items/{{idToGetOne}}
+
+### PUT
+
+PUT http://localhost:3000/api/items/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Ice Sword",
+  "descripcion": "Used by Jingliu to annihilate her enemies"
+}
+
+### POST PARA DELETE
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{
+  "name": "Numby",
+  "descripcion": "Topaz's pet, a smart and strong trotter"
+}
+
+### DELETE
+
+@idToDelete = {{createCharacterClassToDelete.response.body.data.id}}
+DELETE http://localhost:3000/api/items/{{idToDelete}}

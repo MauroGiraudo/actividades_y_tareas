@@ -32,3 +32,10 @@ docker run --name ps8-dsw-h4g
 -d percona/percona-server
 
 docker run --name ps8-dsw-h4g -v "D:\DockerImages/docker-volumes/ps8-dsw-h4g:/var/lib/mysql" -e MYSQL_ROOT_HOST='%' -e MYSQL_ALLOW_EMPTY_PASSWORD="yes" -e MYSQL_ROOT_PASSWORD="root" -e MYSQL_USER="dsw" -e MYSQL_PASSWORD="dsw" -d mysql:latest
+
+## Comando para trabajar en el WorkBench
+
+create database if not exists heroclash4geeks;
+use heroclash4geeks;
+create user if not exists dsw@'%' identified by 'dsw';
+grant all on heroclash4geeks.\* to dsw@'%';

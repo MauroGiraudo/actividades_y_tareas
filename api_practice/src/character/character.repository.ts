@@ -4,6 +4,7 @@ import { db } from "../shared/db/conn.js";
 import { ObjectId } from "mongodb";
 import { pool } from "../shared/db/conn.mysql.js";
 import { ResultSetHeader, RowDataPacket } from "mysql2";
+import { Item } from "./item.entity.js";
 
 const characters = db.collection<Character>('characters')
 
@@ -16,7 +17,8 @@ export class CharacterRepository implements Repository<Character> {
    /*const [characters] = await pool.query('select * from characters')
     for(const character of characters as Character[]){
       const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id])
-      character.items = (items as {itemName:string}[]).map((item) => item.itemName)
+      //CONSULTAR CÓMO RESOLVER EL PROBLEMA DE TIPOS (string[] - Item[]) 
+      //character.items = (items as {itemName:string}[]).map((item) => item.itemName)
     }
     return characters as Character[]*/
   }
@@ -33,7 +35,8 @@ export class CharacterRepository implements Repository<Character> {
     }
     const character = characters[0] as Character
       const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id])
-      character.items = (items as {itemName:string}[]).map((item) => item.itemName)
+      //CONSULTAR CÓMO RESOLVER EL PROBLEMA DE TIPOS (string[] - Item[]) 
+      //character.items = (items as {itemName:string}[]).map((item) => item.itemName)
       return character*/
   }
 
