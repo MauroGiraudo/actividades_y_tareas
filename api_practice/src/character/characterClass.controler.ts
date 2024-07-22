@@ -1,6 +1,6 @@
 
 import { Request, Response } from 'express'
-import { orm } from '../shared/db/orm.js'
+import { orm } from '../shared/db/ormMongo.js'
 import { CharacterClass } from './characterClass.entity.js'
 
 const em = orm.em

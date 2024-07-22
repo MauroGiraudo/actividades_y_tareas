@@ -1,6 +1,6 @@
 import { Collection, Entity, ManyToMany, Property,  } from "@mikro-orm/core";
 import { BaseEntity } from "../shared/db/baseEntity.entity.js";
-import { Character } from "./character.entity.js";
+import { CharacterMKORM } from "./character.entity.mikroOrm.js";
 
 @Entity()
 export class Item extends BaseEntity {
@@ -10,6 +10,6 @@ export class Item extends BaseEntity {
   @Property()
   descripcion!: string
 
-  @ManyToMany(() => Character, (character) => character.items)
-  characters = new Collection<Character>(this)
+  @ManyToMany(() => CharacterMKORM, (character) => character.items)
+  characters = new Collection<CharacterMKORM>(this)
 }
