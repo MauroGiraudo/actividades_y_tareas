@@ -36,6 +36,5 @@ docker run --name ps8-dsw-h4g -v "D:\DockerImages/docker-volumes/ps8-dsw-h4g:/va
 ## Comando para trabajar en el WorkBench
 
 create database if not exists heroclash4geeks;
-use heroclash4geeks;
-create user if not exists dsw@'%' identified by 'dsw';
-grant all on heroclash4geeks.\* to dsw@'%';
+create user if not exists root@'%' identified by 'root';
+grant select, update, insert, delete on heroclash4geeks.\* to root@'%';

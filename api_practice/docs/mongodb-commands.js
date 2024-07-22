@@ -44,6 +44,19 @@
 }
 */
 
+//Acheron Add Data
+/*
+{
+  "name": "Acheron",
+  "characterClass": "Nihility",
+  "level": 80,
+  "hp": 3157,
+  "mana": 9,
+  "attack": 3814,
+  "items": ["Electric Sword", "Crimson Blossom"]
+}
+*/
+
 //Fu Xuan Add Data
 /*
 {

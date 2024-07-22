@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
 import { charRouter } from './character/character.routes.js';
-import { orm } from './shared/db/orm.js';
+import { orm } from './shared/db/ormMongo.js';
 import { RequestContext } from '@mikro-orm/core';
 import { charClassRouter } from './character/characterClass.routes.js';
 import { itemRouter } from './character/item.routes.js';

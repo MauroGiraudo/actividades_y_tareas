@@ -1,4 +1,4 @@
-import { sanitizedCharacter, findAll, findOne, add, remove, update } from "./character.controler.mikroOrm.js";
+import { sanitizedCharacter, findAll, findOne, add, remove, update } from "./character.controler.js";
 import { Router } from "express";
 
 export const charRouter = Router()

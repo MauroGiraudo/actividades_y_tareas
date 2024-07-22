@@ -4,9 +4,9 @@ import { db } from "../shared/db/conn.js";
 import { ObjectId } from "mongodb";
 import { pool } from "../shared/db/conn.mysql.js";
 import { ResultSetHeader, RowDataPacket } from "mysql2";
-import { Item } from "./item.entity.js";
 
-const characters = db.collection<Character>('characters')
+//const characters = db.collection<Character>('characters')
+//QUITAR EL COMENTARIO PARA UTILIZAR MONGODB SIN MIKRO-ORM
 
 export class CharacterRepository implements Repository<Character> {
 
@@ -16,9 +16,8 @@ export class CharacterRepository implements Repository<Character> {
    //MySQL 
    const [characters] = await pool.query('select * from characters')
     for(const character of characters as Character[]){
-      const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id])
-      //CONSULTAR CÓMO RESOLVER EL PROBLEMA DE TIPOS (string[] - Item[]) 
-      //character.items = (items as {itemName:string}[]).map((item) => item.itemName)
+      const [items] = await pool.query('select itemName from characterItems where characterId = ?', [character.id])
+      character.items = (items as {itemName: string}[]).map((item) => item.itemName)
     }
     return characters as Character[]
   }
@@ -29,15 +28,14 @@ export class CharacterRepository implements Repository<Character> {
     return (await characters.findOne({_id})) || undefined*/
     //MySQL
     const id = Number.parseInt(item.codigo)
-    const [characters] = await pool.query<RowDataPacket[]>('select * from characters = ?', [id])
+    const [characters] = await pool.query<RowDataPacket[]>('select * from characters where id = ?', [id])
     if (characters.length === 0){
       return undefined
     }
     const character = characters[0] as Character
-      const [items] = await pool.query('select * from characterItems where itemName = ?', [character.id])
-      //CONSULTAR CÓMO RESOLVER EL PROBLEMA DE TIPOS (string[] - Item[]) 
-      //character.items = (items as {itemName:string}[]).map((item) => item.itemName)
-      return character
+    const [items] = await pool.query('select itemName from characterItems where characterId = ?', [character.id])
+    character.items = (items as {itemName: string}[]).map((item) => item.itemName)
+    return character
   }
 
   public async add(characterInput: Character): Promise<Character | undefined> {
@@ -49,7 +47,7 @@ export class CharacterRepository implements Repository<Character> {
    const [resultado] = await pool.query<ResultSetHeader>('insert into characters set ?', [characterRow])
    characterInput.id = resultado.insertId
    for(const item of items){
-    await pool.query('insert into characterItems set ?', {CharacterId:characterInput.id, ItemName:item})
+    await pool.query('insert into characterItems set ?', {characterId: characterInput.id, ItemName: item})
    }
    return characterInput
   }
@@ -61,7 +59,7 @@ export class CharacterRepository implements Repository<Character> {
     //MySQL
     const characterId = Number.parseInt(codigo)
     const {items, ...characterRow} = characterInput
-    await pool.query('update characters set ? where id = ?', [characterRow.id, characterId])
+    await pool.query('update characters set ? where id = ?', [characterRow, characterId])
     
     await pool.query('delete from characterItems where characterId = ?', [characterId]) 
 
@@ -70,7 +68,8 @@ export class CharacterRepository implements Repository<Character> {
         await pool.query('insert into characterItems set ?', {characterId, itemName})
       }
     }
-    return await this.findOne({codigo})
+    //return await this.findOne({codigo}) //NO SÉ DE DÓNDE SAQUÉ ESTO, PERO LO DEJO POR LAS DUDAS...
+    return await characterInput
   }
 
   public async delete(item: { codigo: string }):Promise<Character | undefined> {

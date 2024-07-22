@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Cascade, Collection, Entity, OneToMany, Property } from '@mikro-orm/core';
-import { Character } from "./character.entity.js";
+import { CharacterMKORM } from "./character.entity.mikroOrm.js";
 import { BaseEntity } from '../shared/db/baseEntity.entity.js';
 export let CharacterClass = class CharacterClass extends BaseEntity {
     constructor() {
@@ -25,7 +25,7 @@ __decorate([
     __metadata("design:type", String)
 ], CharacterClass.prototype, "descripcion", void 0);
 __decorate([
-    OneToMany(() => Character, character => character.characterClass, { cascade: [Cascade.ALL] }),
+    OneToMany(() => CharacterMKORM, character => character.characterClass, { cascade: [Cascade.ALL] }),
     __metadata("design:type", Object)
 ], CharacterClass.prototype, "characters", void 0);
 CharacterClass = __decorate([

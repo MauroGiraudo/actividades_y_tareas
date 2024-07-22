@@ -48,7 +48,7 @@ async function update(req: Request, res: Response) {
   if (!updatedChar) {
     res.status(404).send({message: 'El id no corresponde a un personaje registrado'})
   }
-  res.status(200).send({message: 'El personaje ha sido actualizado con éxito'})
+  res.status(200).send({message: 'El personaje ha sido actualizado con éxito', data: updatedChar})
 }
 
 async function remove(req: Request, res: Response) {
