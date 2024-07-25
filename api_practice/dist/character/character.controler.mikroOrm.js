@@ -1,5 +1,5 @@
 import { CharacterMKORM } from "./character.entity.mikroOrm.js";
-import { orm } from "../shared/db/ormMongo.js";
+import { orm } from "../shared/db/ormMySQL.js";
 const em = orm.em;
 function sanitizedCharacter(req, res, next) {
     req.body.sanitizedChar = {
@@ -29,7 +29,7 @@ async function findAll(req, res) {
 }
 async function findOne(req, res) {
     try {
-        const id = req.params.id;
+        const id = Number.parseInt(req.params.id);
         const character = await em.findOneOrFail(CharacterMKORM, { id }, { populate: ['characterClass', 'items'] });
         res.status(200).json({ message: 'character found', data: character });
     }
@@ -49,11 +49,11 @@ async function add(req, res) {
 }
 async function update(req, res) {
     try {
-        const id = req.params.id;
+        const id = Number.parseInt(req.params.id);
         const characterToUpdate = await em.findOneOrFail(CharacterMKORM, { id });
         em.assign(characterToUpdate, req.body.sanitizedChar);
         em.flush();
-        res.status(200).send({ message: 'character updated succesfully' });
+        res.status(200).send({ message: 'character updated succesfully', data: characterToUpdate });
     }
     catch (error) {
         res.status(500).send({ message: error.message });
@@ -61,7 +61,7 @@ async function update(req, res) {
 }
 async function remove(req, res) {
     try {
-        const id = req.params.id;
+        const id = Number.parseInt(req.params.id);
         const character = em.getReference(CharacterMKORM, id);
         await em.removeAndFlush(character);
         res.status(200).send({ message: 'character removed succesfully' });

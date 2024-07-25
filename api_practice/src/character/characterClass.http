@@ -14,15 +14,13 @@ Content-Type: application/json
 
 ### ID
 
-@id = {{createCharacterClass.response.body.data.id}}
-
 ### GET ONE
 
-GET http://localhost:3000/api/characters/classes/{{id}}
+GET http://localhost:3000/api/characters/classes/1
 
 ### PUT
 
-PUT http://localhost:3000/api/characters/classes/{{id}}
+PUT http://localhost:3000/api/characters/classes/1
 Content-Type: application/json
 
 {
@@ -37,10 +35,9 @@ Content-Type: application/json
 
 {
   "name": "Nihility",
-  "descripcion": "Applies debuffs onto the enemies" 
+  "descripcion": "Applies debuffs onto enemies" 
 }
 
 ### DELETE
 
-@idToDelete = {{createCharacterClassToDelete.response.body.data.id}}
-DELETE http://localhost:3000/api/characters/classes/6687c3119f29fa002acda8c5
+DELETE http://localhost:3000/api/characters/classes/2

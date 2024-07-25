@@ -13,13 +13,11 @@ Content-Type: application/json
 }
 
 ### GET ONE
-
-@idToGetOne = {{createItemToGetOne.response.body.data.id}}
-GET http://localhost:3000/api/items/{{idToGetOne}}
+GET http://localhost:3000/api/items/1
 
 ### PUT
 
-PUT http://localhost:3000/api/items/{{id}}
+PUT http://localhost:3000/api/items/1
 Content-Type: application/json
 
 {
@@ -32,11 +30,10 @@ POST http://localhost:3000/api/items
 Content-Type: application/json
 
 {
-  "name": "Numby",
-  "descripcion": "Topaz's pet, a smart and strong trotter"
+  "name": "Electric Sword",
+  "descripcion": "Used by Acheron to erase her enemies from existance itself"
 }
 
 ### DELETE
 
-@idToDelete = {{createCharacterClassToDelete.response.body.data.id}}
-DELETE http://localhost:3000/api/items/{{idToDelete}}
+DELETE http://localhost:3000/api/items/1

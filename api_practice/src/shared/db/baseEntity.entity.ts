@@ -1,5 +1,5 @@
 import { PrimaryKey, DateTimeType, Property, SerializedPrimaryKey } from "@mikro-orm/core";
-import { ObjectId } from "@mikro-orm/mongodb";
+//import { ObjectId } from "@mikro-orm/mongodb";
 
 
 export abstract class BaseEntity {

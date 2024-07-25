@@ -20,8 +20,6 @@
   },
   "dependencies": {
     "@mikro-orm/core": "5.8.10",
-    "@mikro-orm/mongo-highlighter": "1.0.0",
-    "@mikro-orm/mongodb": "5.8.10",
     "@mikro-orm/mysql": "5.8.10",
     "@mikro-orm/sql-highlighter": "1.0.1",
     "express": "4.19.2",

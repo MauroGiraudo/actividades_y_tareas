@@ -8,6 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { PrimaryKey } from "@mikro-orm/core";
+//import { ObjectId } from "@mikro-orm/mongodb";
 export class BaseEntity {
 }
 __decorate([

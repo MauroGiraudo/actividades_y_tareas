@@ -4,7 +4,7 @@ GET http://localhost:3000/api/characters
 
 ### Obtenemos un character
 
-GET http://localhost:3000/api/characters/667e1e3351752f0f7acc898b
+GET http://localhost:3000/api/characters/1
 
 ### Crear un nuevo character
 
@@ -13,41 +13,53 @@ Content-Type: application/json
 
 {
   "name": "Jingliu",
-  "characterClass": ,
+  "characterClass": 1,
   "level": 80,
   "hp": 2800,
   "mana": 130,
   "attack": 3030,
-  "items": []
+  "items": [3]
 }
 
-### Modificar un character (PUT - recurso completo e idempotente)
+###
 
-PUT http://localhost:3000/api/characters/667e1e3351752f0f7acc898b
+POST http://localhost:3000/api/characters
 Content-Type: application/json
 
 {
   "name": "Acheron",
-  "characterClass": ,
+  "characterClass": 3,
   "level": 80,
   "hp": 3400,
   "mana": 9,
   "attack": 3850,
-  "items": []
+  "items": [4]
 }
 
-### Modificar un character (PATCH - recurso parcial)
+### Modificar un character (PUT - recurso completo e idempotente)
 
-PATCH http://localhost:3000/api/characters/667e1e3351752f0f7acc898b
+PUT http://localhost:3000/api/characters/3
 Content-Type: application/json
 
 {
   "name": "Acheron",
-  "characterClass": ,
-  "level": 75,
-  "items": []
+  "characterClass": 3,
+  "level": 80,
+  "hp": 3158,
+  "mana": 9,
+  "attack": 3150,
+  "items": [4]
+}
+
+### Modificar un character (PATCH - recurso parcial)
+
+PATCH http://localhost:3000/api/characters/3
+Content-Type: application/json
+
+{
+  "level": 75
 }
 
 ### Borrar un character
 
-DELETE http://localhost:3000/api/characters/667e1e2d51752f0f7acc898a
+DELETE http://localhost:3000/api/characters/2
