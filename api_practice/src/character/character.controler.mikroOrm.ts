@@ -1,4 +1,3 @@
-import { CharacterRepository } from "./character.repository.js";
 import { Request, Response, NextFunction } from 'express'
 import { CharacterMKORM } from "./character.entity.mikroOrm.js";
 import { orm } from "../shared/db/ormMongo.js";

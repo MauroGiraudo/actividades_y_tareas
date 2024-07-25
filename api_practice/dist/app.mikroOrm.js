@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
 import { charRouter } from './character/character.routes.js';
-import { orm } from './shared/db/ormMongo.js';
+import { orm, syncSchema } from './shared/db/ormMySQL.js';
 import { RequestContext } from '@mikro-orm/core';
 import { charClassRouter } from './character/characterClass.routes.js';
 import { itemRouter } from './character/item.routes.js';
@@ -19,6 +19,7 @@ app.use('/api/items', itemRouter);
 app.use((req, res) => {
     return res.status(404).send({ message: 'Resource not found' });
 });
+await syncSchema(); //nunca utilizar en producción
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
 });
