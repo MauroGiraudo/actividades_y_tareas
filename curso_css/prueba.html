@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botón con dos colores</title>
+  <style>
+    .boton-dos-colores {
+      display: flex;
+      border: none;
+      border-radius: 5px;
+      overflow: hidden;
+      padding: 0;
+      width: 200px;
+      /* Ajusta según tus necesidades */
+      height: 50px;
+      /* Ajusta según tus necesidades */
+      cursor: pointer;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .color-uno,
+    .color-dos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      width: 50%;
+      /* Cada div cubre el 50% del ancho del botón */
+    }
+
+    .color-uno {
+      background-color: #003366;
+      /* Azul oscuro */
+    }
+
+    .color-dos {
+      background-color: #888888;
+      /* Gris */
+    }
+  </style>
+</head>
+
+<body>
+  <button class="boton-dos-colores">
+    <div class="color-uno">Parte 1</div>
+    <div class="color-dos">Parte 2</div>
+  </button>
+</body>
+
+</html>

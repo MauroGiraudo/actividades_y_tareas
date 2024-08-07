@@ -46,6 +46,10 @@ a:hover {
   text-decoration: none;
 }
 
+a:active { /* Este estilo se hace presente cuando se presiona la etiqueta a la que referencia (como podría ser con un botón) */
+  box-shadow: 1px 1px 3px #2f2f2f;
+}
+
 body h1 + p .especial {
   color: yellow;
   background-color: black;
