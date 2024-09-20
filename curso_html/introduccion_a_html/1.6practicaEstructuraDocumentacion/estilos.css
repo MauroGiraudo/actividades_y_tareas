@@ -82,6 +82,7 @@ header {
     background-color: rgb(23, 22, 22);
     padding: 1.2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    width: 37%;
   }
 
   .nav.visible {

@@ -3,23 +3,32 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Honkai: Star Rail Turns Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./estilos.css" type="text/css" />
   </head>
 
   <body>
     <header>
-      <h1>HSR Multiuse Calculator</h1>
+      <h1 class="title"><a href="index.html">HSR Multiuse Calculator</a></h1>
+      <button class="abrir-menu" id="abrir"><i class="bi bi-three-dots"></i></button>
+      <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
+        <ul class="nav-list">
+          <li><a href="index.html" title="Return to the Main Page">HomePage</a></li>
+          <li><a href="statCalculator.html" title="Allows you to calculate your character's HP, ATK, DEF and SPD">Stat
+              Calculator</a></li>
+          <li>Turn/Cycle Calculator</li>
+          <li><a href="dmgCalculator.html"
+              title="Allows you to calculate the final DMG of your character incorporating other allie's buffs">
+              DMG Output Calculator</a></li>
+          <li class="user"><a><span>Usuario</span></a></li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul>
-        <li><a href="index.html" title="Return to the Main Page">HomePage</a></li>
-        <li><a href="statCalculator.html" title="Allows you to calculate your character's HP, ATK, DEF and SPD">Stat Calculator</a></li>
-        <li>Turn/Cycle Calculator</li>
-        <li><a href="dmgCalculator.html" title="Allows you to calculate the final DMG of your character incorporating other allie's buffs">
-            DMG Output Calculator</a></li>
-      </ul>
-    </nav>
+    
     <main>
       <article>
         <h2>Turn/Cycle Calculator</h2>
